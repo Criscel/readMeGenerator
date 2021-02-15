@@ -1,6 +1,6 @@
 // Include packages needed for this application
-const fs = require('fs');
 const inquirer  = require('inquirer');
+const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // Create an array of questions for user input
@@ -18,7 +18,7 @@ const questions = [
     {
         type: "input",
         message: "Enter Project Deployed Link: ",
-        name: "link",
+        name: "deployedLink",
     },
     {
         type: "input",
@@ -33,7 +33,7 @@ const questions = [
     {
         type: "input",
         message: "Enter Project Contribution Guidelines: ",
-        name: "guidlines",
+        name: "guidelines",
     },
     {
         type: "input",
@@ -72,7 +72,7 @@ function init() {
         .prompt (questions)
             .then((data) =>{
                 const myReadme = generateMarkdown(data);
-                writeToFile('README.md', myReadme);
+                writeToFile('SampleREADME.md', myReadme);
             });
 }
 

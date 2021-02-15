@@ -1,20 +1,20 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const MIT = {
-  href: "https://opensource.org/licenses/MIT",
-  src: 'https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge',
+  link: "https://opensource.org/licenses/MIT",
+  badge: 'https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge',
   alt: 'MIT'
 }
 
 const Mozilla = {
-  href: "https://opensource.org/licenses/MPL-2.0",
-  src: 'https://img.shields.io/badge/License-MPL%202.0-brightgreen?style=for-the-badge',
+  link: "https://opensource.org/licenses/MPL-2.0",
+  badge: 'https://img.shields.io/badge/License-MPL%202.0-brightgreen?style=for-the-badge',
   alt: 'Mozilla Public License 2.0'
 }
 
 const Apache = {
-  href: "https://opensource.org/licenses/Apache-2.0",
-  src: 'https://img.shields.io/badge/License-Apache%202.0-blue.svg',
+  link: "https://opensource.org/licenses/Apache-2.0",
+  badge: 'https://img.shields.io/badge/License-Apache%202.0-blue.svg',
   alt: 'Apache'  
 }
 
@@ -39,9 +39,6 @@ function renderLicenseSection(license, name) {
   let licCode;
 
   switch (license){
-    case 'Free License':
-      licCode = Free;
-      break;
     case 'MIT':
       licCode = MIT;
       break;
@@ -79,12 +76,11 @@ function generateMarkdown(data) {
   - [Licence](#licence)
   - [Questions and Feedback](#questions-and-feedback)
   ## Usage Information
-  ${data.howtouse}
+  ${data.information}
   ## Contributing
-  ${data.contributing}
+  ${data.guidelines}
   ## Tests
-  ${data.tests}
-  ## License
+  ${data.test}
   ${licenseSection}
   ## Questions and Feedback
   Got questions or feedback? You can contact me on:
